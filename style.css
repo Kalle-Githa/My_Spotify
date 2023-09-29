@@ -1,0 +1,94 @@
+@font-face {
+  font-family: SpotifyFont;
+  src: url(fonts/GothamMedium.ttf);
+}
+
+body {
+  background-color: #121212;
+  color: white;
+  font-family: SpotifyFont;
+}
+h2 {
+  color: white;
+}
+p {
+  margin: 0px;
+}
+.container-main {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  /* detta ger lite responsivitet när skärmen blir mindre */
+}
+
+.card {
+  background-color: #181818;
+
+  border-radius: 5px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.album-text {
+  /* p taggar har top o botten margin by defult */
+  font-family: SpotifyFont;
+
+  line-height: 26px;
+  padding-bottom: 5px;
+  letter-spacing: -0.5px;
+}
+
+.artist-text {
+  /* p taggar har något top o botten margin by defult */
+  font-family: SpotifyFont;
+  letter-spacing: -0.5px;
+  color: #b3b3b3;
+}
+
+.artis-container {
+  position: relative;
+}
+.image-album {
+  height: 200px;
+  width: 200px;
+  border-radius: 5px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.iner-container img {
+  display: flex;
+}
+.button {
+  background-color: #1ed760;
+  border: none;
+  display: flex;
+  /* annars håller den sig defult i skärmen */
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  /* när man skapar cirklar har man samma height o width och border-radius 50% */
+  position: absolute;
+  /* detta gör att den inte tar plats i sin div */
+  bottom: 0px;
+  right: 10px;
+
+  transition: all 0.5s;
+  opacity: 0;
+  /* detta gör om den ska bli mindre synlig alså genomginlig */
+}
+.card:hover .button {
+  /* när vi hovrar card diven så ändras button. Måste ha transition atributer på button classen */
+  opacity: 1;
+  bottom: 30px;
+}
+.card:hover {
+  background-color: #252525;
+}
+.button:hover {
+  transform: scale(1.2);
+}
